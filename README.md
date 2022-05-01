@@ -1,7 +1,10 @@
 # Gradle multi-module project
 
 This is a sample gradle multi-module spring-boot project.
-It consists of two modules - `library` and `application`.
+It consists of two modules:
+
+    └── library
+    └── application
 
 The `library` module is not a stand-alone Spring Boot application. It is used by the `application` module as a dependency instead.
 
