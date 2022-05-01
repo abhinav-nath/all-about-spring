@@ -4,7 +4,7 @@ plugins {
   id 'java'
 }
 
-group = 'com.codecafe'
+group = 'com.codecafe.multimodule'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = JavaVersion.VERSION_11
 
@@ -22,12 +22,11 @@ jar {
 
 subprojects {
   apply plugin: 'java'
+  apply plugin: 'io.spring.dependency-management'
 
-  configurations {
-    compileOnly {
-      extendsFrom annotationProcessor
-    }
-  }
+  group = 'com.codecafe.multimodule'
+  version = '0.0.1-SNAPSHOT'
+  sourceCompatibility = JavaVersion.VERSION_11
 
   repositories {
     mavenCentral()
@@ -35,11 +34,6 @@ subprojects {
 
   dependencies {
     implementation "org.springframework.boot:spring-boot-starter:${springBootVersion}"
-    implementation "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
-    implementation "org.apache.logging.log4j:log4j-api:${log4jVersion}"
-    implementation "org.apache.logging.log4j:log4j-to-slf4j:${log4jVersion}"
-    compileOnly "org.projectlombok:lombok:${lombokVersion}"
-    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
     testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
   }
 

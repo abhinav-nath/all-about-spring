@@ -1,2 +1,4 @@
-rootProject.name = 'all-about-spring'
-include 'config-management-with-spring-cloud-k8s'
+rootProject.name = 'gradle-multi-module-project'
+
+include 'library'
+include 'application'
